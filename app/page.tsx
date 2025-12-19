@@ -4,19 +4,22 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center text-white">
-        <div className="absolute inset-0 z-0">
+      {/* Hero Section with Search Bar */}
+      <section className="relative min-h-[calc(100vh+200px)] flex flex-col items-center justify-center text-center text-white overflow-hidden pb-32">
+        <div className="hero-image-container absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
             alt="Luxury Home"
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
+        
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Find Your Dream Home
           </h1>
@@ -38,44 +41,46 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
 
-      {/* Search Bar Section */}
-      <section className="bg-white py-12 shadow-lg -mt-20 relative z-20 mx-4 md:mx-auto max-w-6xl rounded-lg">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
-              <input
-                type="text"
-                placeholder="Enter city or zip"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
-              <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <option>All Types</option>
-                <option>House</option>
-                <option>Apartment</option>
-                <option>Villa</option>
-                <option>Condo</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
-              <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <option>Any Price</option>
-                <option>$0 - $500K</option>
-                <option>$500K - $1M</option>
-                <option>$1M - $2M</option>
-                <option>$2M+</option>
-              </select>
-            </div>
-            <div className="flex items-end">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Search
-              </button>
+        {/* Search Bar Section */}
+        <div className="relative z-20 w-full max-w-6xl mx-auto px-4 -mt-8">
+          <div className="bg-white py-12 shadow-lg rounded-2xl">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                  <input
+                    type="text"
+                    placeholder="Enter city or zip"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none appearance-none bg-white">
+                    <option>All Types</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Villa</option>
+                    <option>Condo</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors outline-none appearance-none bg-white">
+                    <option>Any Price</option>
+                    <option>$0 - $500K</option>
+                    <option>$500K - $1M</option>
+                    <option>$1M - $2M</option>
+                    <option>$2M+</option>
+                  </select>
+                </div>
+                <div className="flex items-end">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-semibold transition-colors shadow-md hover:shadow-lg">
+                    Search
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
